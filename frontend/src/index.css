@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Reset + Global Box Sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Smooth UI Font */
+body {
+  background-color: #f4f7fb; /* soft light background */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Optional: Better default container spacing */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* PRINT MODE — makes Resume look perfect */
+@media print {
+
+  /* White clean background for PDF */
+  body {
+    background: white !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide UI elements not needed in PDF */
+  nav,
+  button,
+  .no-print,
+  .print-hidden {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  /* Make printed resume full width */
+  .container, 
+  .resume-wrapper,
+  .print-area {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Remove shadows for clean print */
+  .shadow,
+  .shadow-lg,
+  .shadow-xl,
+  .shadow-2xl {
+    box-shadow: none !important;
+  }
+
+  /* Ensure gradient header prints correctly */
+  .gradient-header {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
